@@ -3,7 +3,8 @@ const app = express()
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 
-server.listen(3000);
+const PORT = process.env.PORT || 80
+app.listen(PORT, () => {console.log('Server has been started...')})
 
 app.get('/', function(request, respons) {
    respons.sendFile(__dirname + '/index.html');
