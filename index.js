@@ -4,7 +4,7 @@ var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 
 const PORT = process.env.PORT || 80
-app.listen(PORT, () => {console.log('Server has been started...')})
+
 
 app.get('/', function(request, respons) {
    respons.sendFile(__dirname + '/index.html');
@@ -28,3 +28,5 @@ socket.on('send mess', function(data) {
 });
 
 });
+
+app.listen(PORT, () => {console.log('Server has been started...')})
